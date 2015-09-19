@@ -1,0 +1,24 @@
+<ion-view view-title="新建">
+    <ion-content class="padding">
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+              <input type="text" ng-model="record.code" requried placeholder="编码">
+          </label>
+          <button class="ion-android-camera" ng-click="scan()"></button>
+        </div>
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+              <input type="number" min="1" ng-model="record.num" requried placeholder="数量">
+          </label>
+        </div>
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+              <input type="text" ng-model="record.name" requried placeholder="借用人姓名">
+          </label>
+        </div>
+        <button class="button button-block button-positive" ng-disable="isSubmit" ng-click="create()">
+            创建
+        </button>
+    </ion-content>
+</ion-view>
+

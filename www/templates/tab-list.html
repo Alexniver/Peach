@@ -1,0 +1,34 @@
+<ion-view view-title="{{title}}">
+  <ion-content>
+
+      <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+            <input type="text" placeholder="输入关键字进行查询" ng-model="searchFilter">
+        </label>
+        <button class="ion-android-camera" ng-click="scan()"></button>
+        &nbsp;&nbsp;
+        <button class="ion-ios-download" ng-click="exportItems()"></button>
+      </div>
+      <ion-list show-delete="data.showDelete">
+
+        <ion-item ng-repeat="item in items | filter:searchFilter" item="item" class="item-remove-animate" on-hold="returned(item.id)" on-click="hideDelete()">
+            <div>
+                编码: {{ item.code }} <br>
+                数量: {{ item.num }} <br>
+                借用人: {{item.name}} <br>
+                借用时间: {{item.createTime}} <br>
+                是否已还: {{item.isReturnedDesc}} <br>
+                <div ng-show="item.returnTime">返还时间: {{item.returnTime}}<div>
+            </div>
+              <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item.id)">
+              </ion-delete-button>
+              <ion-option-button class="button-assertive" ng-click="onItemDelete(item.id)">
+                删除
+              </ion-option-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+</ion-view>
