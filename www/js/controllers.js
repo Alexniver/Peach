@@ -97,16 +97,6 @@ angular.module('starter.controllers', [])
         }, function(err) {
             alert(JSON.stringify(err));
         });
-        /**var mystyle = {
-            headers:true, 
-            column: {style:{Font:{Bold:"1"}}},
-            rows: {1:{style:{Font:{Color:"#FF0077"}}}},
-            cells: {1:{1:{
-            style: {Font:{Color:"#00FFFF"}}
-            }}}
-        };
-        alasql('SELECT * INTO XLSXML("Excel' + new Date().getTime() + '.xls",?) FROM ?',[mystyle,$scope.items]);*/
-
     }
 
     $scope.$on('$ionicView.enter', function(){
